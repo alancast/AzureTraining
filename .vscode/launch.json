@@ -1,0 +1,50 @@
+{
+   // Use IntelliSense to find out which attributes exist for C# debugging
+   // Use hover for the description of the existing attributes
+   // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+   "version": "0.2.0",
+   "configurations": [
+       {
+           "name": "2_Receiver (.NET Core Launch (console))",
+           "type": "coreclr",
+           "request": "launch",
+           "preLaunchTask": "build receiver",
+           "program": "${workspaceRoot}/2_EventHub/Receiver/bin/Debug/netcoreapp2.0/Receiver.dll",
+           "args": [],
+           "cwd": "${workspaceRoot}/2_EventHub/Receiver",
+           "stopAtEntry": false,
+           "console": "integratedTerminal"
+       },
+       {
+           "name": "2_Sender (.NET Core Launch (console))",
+           "type": "coreclr",
+           "request": "launch",
+           "preLaunchTask": "build sender",
+           "program": "${workspaceRoot}/2_EventHub/Sender/bin/Debug/netcoreapp2.0/Sender.dll",
+           "args": [],
+           "cwd": "${workspaceRoot}/2_EventHub/Sender",
+           "stopAtEntry": false,
+           "console": "integratedTerminal"
+       },
+        {
+            "name": "1_WriteBlobStorage (.NET Core Launch (console))",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build blob",
+            // If you have changed target frameworks, make sure to update the program path.
+            "program": "${workspaceFolder}/1_WriteBlobStorage/bin/Debug/netcoreapp2.0/1_WriteBlobStorage.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/1_WriteBlobStorage",
+            // For more information about the 'console' field, see https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md#console-terminal-window
+            "console": "integratedTerminal",
+            "stopAtEntry": false,
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach",
+            "processId": "${command:pickProcess}"
+        }
+    ,]
+}

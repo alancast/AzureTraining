@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build blob",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/1_WriteBlobStorage/1_WriteBlobStorage.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build sender",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/2_EventHub/Sender/Sender.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build receiver",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/2_EventHub/Receiver/Receiver.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
